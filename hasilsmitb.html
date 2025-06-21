@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Seleksi Mandiri ITB 2025</title>
+    <style>
+        /* Reset dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar .nav-left,
+        .navbar .nav-right {
+            display: flex;
+            align-items: center;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            margin-right: 1.25rem;
+            font-size: 0.95rem;
+        }
+        .navbar a:last-child {
+            margin-right: 0;
+        }
+        .navbar a:hover {
+            color: #007bff;
+        }
+        .btn-logout {
+            background-color: transparent;
+            border: none;
+            color: #333;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+        .btn-logout:hover {
+            color: #dc3545;
+        }
+        /* Container utama */
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        h1.page-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+        /* Kartu hasil seleksi */
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        .card-header h2 {
+            margin-bottom: 0.5rem;
+            font-size: 1.75rem;
+            color: #2c3e50;
+        }
+        .card-body {
+            display: flex;
+            padding: 1.5rem;
+        }
+        /* Bagian kiri untuk foto profil */
+        .profile-container {
+            flex: 0 0 150px; /* Lebar tetap contoh 150px */
+            margin-right: 1.5rem;
+            text-align: center;
+        }
+        .profile-container img {
+            width: 150px; /* ratio 3:4 */
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .profile-container p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        /* Bagian kanan untuk detail */
+        .details {
+            flex: 1;
+        }
+        .details .detail-row {
+            display: flex;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .details .detail-row:last-child {
+            border-bottom: none;
+        }
+        .details .detail-label {
+            flex: 0 0 150px;
+            font-weight: bold;
+            color: #555;
+        }
+        .details .detail-value {
+            flex: 1;
+            color: #333;
+        }
+        /* Kotak hasil: diubah menjadi hijau pastel */
+        .result-box {
+            margin-top: 1.5rem;
+            margin: 2rem;
+            padding: 1.5rem;
+            background-color: #d4edda; /* hijau pastel */
+            border: 1px solid #c3e6cb; /* border hijau lembut */
+            border-radius: 6px;
+            text-align: center;
+        }
+        .result-box p.intro {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #155724;
+        }
+        .result-box p.status {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #155724;
+        }
+        .result-box p.detail {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #155724;
+        }
+        .result-box p.message {
+            font-size: 0.95rem;
+            color: #155724;
+            line-height: 1.5;
+        }
+        /* Footer sederhana */
+        .footer {
+            margin-top: 2rem;
+            padding: 1rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        /* Responsif jika diperlukan */
+        @media (max-width: 600px) {
+            .card-body {
+                flex-direction: column;
+                align-items: center;
+            }
+            .profile-container {
+                margin-bottom: 1rem;
+            }
+            .details .detail-label {
+                flex: 0 0 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="#">Web Penerimaan Mahasiswa ITB</a>
+            <a href="#">Layanan Tiket</a>
+        </div>
+        <div class="nav-right">
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </div>
+    </header>
+
+    <!-- Konten utama -->
+    <div class="container">
+        <h1 class="page-title">Hasil Seleksi</h1>
+        <div class="card">
+            <div class="card-header">
+                <h2>HASIL SELEKSI</h2>
+            </div>
+            <div class="card-body">
+                <!-- Foto Profil -->
+                <div class="profile-container">
+                    <!-- Letakkan foto Anda di path: assets/images/foto_3x4.jpg -->
+                    <img src="assets/images/dhafa.jpg" alt="Foto Profil (3x4)">
+                </div>
+                <!-- Detail informasi -->
+                <div class="details">
+                    <div class="detail-row">
+                        <div class="detail-label">No. Seleksi</div>
+                        <div class="detail-value">: 25105266</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">Nama</div>
+                        <div class="detail-value">: Dhafa Rizi</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">Fakultas</div>
+                        <div class="detail-value">: Fakultas Seni Rupa dan Desain (FSRD)</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Kotak hasil lulus dengan latar hijau -->
+            <div class="result-box">
+                <p class="intro">Selamat, anda:</p>
+                <p class="status">LULUS</p>
+                <p class="detail">pada seleksi Mandiri ITB (SM-ITB) 2025</p>
+                <p class="message">
+                    Selamat bergabung dan memulai perjalanan baru dalam mewujudkan #masa depanbersama – #FutureTogether!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 Penerimaan Mahasiswa ITB. Semua hak cipta dilindungi.
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Konfirmasi logout
+        document.getElementById('logoutBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            var confirmLogout = confirm("Apakah Anda yakin ingin logout?");
+            if (confirmLogout) {
+                // Ganti URL berikut sesuai endpoint logout aplikasi Anda
+                // window.location.href = "/logout";
+                alert("Anda akan logout (sesuaikan URL logout di script ini).");
+            }
+        });
+    </script>
+</body>
+</html>
